@@ -15,6 +15,15 @@ object PreferencesHelper{
         sharedPreferences.edit().putBoolean(IS_REGISTERED, state).apply()
     }
 
-
+    fun putUserCredentials(name : String, pin : String){
+        sharedPreferences.edit().putString(FULL_NAME_USER,name).apply()
+        sharedPreferences.edit().putString(name,pin).apply()
+    }
+    fun getPin(name : String) : String{
+        return sharedPreferences.getString(name, "")?:""
+    }
+    fun getName() : String{
+        return sharedPreferences.getString(FULL_NAME_USER, "Something went wrong")?:"something went wrong"
+    }
 
 }

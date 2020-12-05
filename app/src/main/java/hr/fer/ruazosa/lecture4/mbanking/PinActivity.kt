@@ -1,5 +1,6 @@
 package hr.fer.ruazosa.lecture4.mbanking
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -45,12 +46,22 @@ class PinActivity : AppCompatActivity() {
 
     fun onConfirmClicked(){
 
+        fullName = intent.getStringExtra(FULL_NAME_USER)
+
         if(pinMode == PIN_MODE_REGISTER){
             // ako se pin ekran odnosi na registriranje
-            fullName = intent.getStringExtra(FULL_NAME_USER)
+
+            PreferencesHelper.putUserCredentials(fullName,pin)
+            PreferencesHelper.putIsRegistered(true)
+
+            startActivity(Intent(this,TransactionsActivity::class.java))
 
         }else{
-            //ako se pin ekran koristi za logiranje
+            if (pin == PreferencesHelper.getPin(fullName)){
+                startActivity(Intent(this,TransactionsActivity::class.java))
+            }else{
+                Toast.makeText(this,"wrong PIN", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -82,7 +93,6 @@ class PinActivity : AppCompatActivity() {
         }
 
         confirmButton.setOnClickListener {
-            Toast.makeText(this, pin.toString(), Toast.LENGTH_SHORT).show()
             onConfirmClicked()
         }
 

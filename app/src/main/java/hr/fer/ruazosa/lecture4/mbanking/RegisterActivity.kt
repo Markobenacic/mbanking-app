@@ -17,8 +17,8 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        firstNameEditText = findViewById<EditText>(R.id.registerFirstNameTxt)
-        lastNameEditText = findViewById<EditText>(R.id.registerLastNameTxt)
+        firstNameEditText = findViewById(R.id.registerFirstNameTxt)
+        lastNameEditText = findViewById(R.id.registerLastNameTxt)
         confirmButton = findViewById(R.id.confirmRegisterButton)
 
 
