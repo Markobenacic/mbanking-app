@@ -15,14 +15,12 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mbanking">
-        <activity
-            android:name=".TransactionsActivity"
-            android:label="@string/title_activity_transactions">
+        <activity android:name=".UI.AccountsActivity">
 
         </activity>
 
         <activity
-            android:name=".SplashActivity"
+            android:name=".UI.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,10 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".PinActivity" />
+        <activity android:name=".UI.MainActivity" />
+        <activity android:name=".UI.RegisterActivity" />
+        <activity android:name=".UI.LoginActivity" />
+        <activity android:name=".UI.PinActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package hr.fer.ruazosa.lecture4.mbanking
+package hr.fer.ruazosa.lecture4.mbanking.UI
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import hr.fer.ruazosa.lecture4.mbanking.*
 
 
 class PinActivity : AppCompatActivity() {
@@ -40,27 +41,35 @@ class PinActivity : AppCompatActivity() {
 
         initShuffle()
         buttonListeners()
-
-
     }
 
-    fun onConfirmClicked(){
+    fun onConfirmClicked() {
 
         fullName = intent.getStringExtra(FULL_NAME_USER)
 
-        if(pinMode == PIN_MODE_REGISTER){
+        if (pinMode == PIN_MODE_REGISTER) {
             // ako se pin ekran odnosi na registriranje
 
-            PreferencesHelper.putUserCredentials(fullName,pin)
-            PreferencesHelper.putIsRegistered(true)
+            PreferencesHelper.putUserCredentials(
+                fullName,
+                pin
+            )
+            PreferencesHelper.putIsRegistered(
+                true
+            )
 
-            startActivity(Intent(this,TransactionsActivity::class.java))
+            startActivity(Intent(this, AccountsActivity::class.java))
 
-        }else{
-            if (pin == PreferencesHelper.getPin(fullName)){
-                startActivity(Intent(this,TransactionsActivity::class.java))
-            }else{
-                Toast.makeText(this,"wrong PIN", Toast.LENGTH_SHORT).show()
+        } else {
+            //ako se pin ekran odnosi na login
+
+            if (pin == PreferencesHelper.getPin(
+                    fullName
+                )
+            ) {
+                startActivity(Intent(this, AccountsActivity::class.java))
+            } else {
+                Toast.makeText(this, "wrong PIN", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -73,9 +82,9 @@ class PinActivity : AppCompatActivity() {
             val button = it as Button
             confirmButton.isEnabled = pin.length >= 3
 
-            if(pin.length == 5){
+            if (pin.length == 5) {
                 toggleNumpad(false)
-            }else{
+            } else {
                 toggleNumpad(true)
             }
             pin += button.text.toString()
@@ -110,7 +119,7 @@ class PinActivity : AppCompatActivity() {
         button10.setOnClickListener(numericButtons)
     }
 
-    private fun toggleNumpad(state : Boolean) {
+    private fun toggleNumpad(state: Boolean) {
         button1.isEnabled = state
         button2.isEnabled = state
         button3.isEnabled = state

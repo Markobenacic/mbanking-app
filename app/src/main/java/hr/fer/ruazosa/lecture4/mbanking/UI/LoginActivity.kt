@@ -1,4 +1,4 @@
-package hr.fer.ruazosa.lecture4.mbanking
+package hr.fer.ruazosa.lecture4.mbanking.UI
 
 import android.content.Intent
 import  android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import hr.fer.ruazosa.lecture4.mbanking.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -28,7 +29,10 @@ class LoginActivity : AppCompatActivity() {
             if(checkIfUserExists()){
                 val intent = Intent(this, PinActivity::class.java)
                 intent.putExtra(FULL_NAME_USER, getFullName())
-                intent.putExtra(PIN_MODE, PIN_MODE_LOGIN)
+                intent.putExtra(
+                    PIN_MODE,
+                    PIN_MODE_LOGIN
+                )
                 startActivity(intent)
             }else{
                 Toast.makeText(this,"User does not exist", Toast.LENGTH_SHORT).show()

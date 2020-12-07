@@ -1,4 +1,4 @@
-package hr.fer.ruazosa.lecture4.mbanking
+package hr.fer.ruazosa.lecture4.mbanking.UI
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import hr.fer.ruazosa.lecture4.mbanking.*
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -26,7 +27,10 @@ class RegisterActivity : AppCompatActivity() {
             if(namesCheck()){
                 val intent = Intent(this, PinActivity::class.java)
                 intent.putExtra(FULL_NAME_USER, getFullName())
-                intent.putExtra(PIN_MODE, PIN_MODE_REGISTER)
+                intent.putExtra(
+                    PIN_MODE,
+                    PIN_MODE_REGISTER
+                )
                 startActivity(intent)
             }else{
                 //Do nothing, let user write their name again

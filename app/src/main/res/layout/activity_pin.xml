@@ -23,7 +23,7 @@
             android:layout_marginTop="20dp"
             android:text="Enter your PIN"
             android:textColor="#4A4E69"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
