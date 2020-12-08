@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/accountCardView"
     android:layout_margin="4dp">
 
     <RelativeLayout
@@ -13,16 +14,40 @@
             android:id="@+id/ibanTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="IBAN"
-            android:textSize="30sp"></TextView>
+            android:text="IBAN: "
+            android:textColor="#4A4E69"
+            android:textSize="20sp"></TextView>
 
         <TextView
             android:id="@+id/balanceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ibanTextView"
-            android:text="Balance"
-            android:textSize="30sp"></TextView>
+            android:layout_below="@+id/ibanTextView"
+            android:layout_marginTop="18dp"
+            android:textColor="#4A4E69"
+            android:text="Balance: "
+            android:textSize="20sp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/ibanTextView2"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ibanTextView"
+            android:text="2349827382439842398742398"
+            android:paddingLeft="6dp"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/balanceTextView2"
+            android:layout_toEndOf="@+id/balanceTextView"
+            android:layout_below="@+id/ibanTextView"
+            android:layout_marginTop="22dp"
+            android:textSize="16sp"
+            android:text="250,6 HRK">
+
+        </TextView>
 
         <ImageView
             android:id="@+id/arrowImageView"
