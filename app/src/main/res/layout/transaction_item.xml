@@ -15,7 +15,7 @@
             android:gravity="center"
             android:text="datum"
             android:textSize="20sp"
-            android:textColor="#F2E9E4"
+            android:textColor="@color/isabelline"
             android:textStyle="bold"></TextView>
 
         <TextView

@@ -13,7 +13,7 @@ import retrofit2.create
 public class AccountsRepository {
 
     private var interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-    private lateinit var endpoints: AccountsEndpoints
+    private var endpoints: AccountsEndpoints
     private val client = OkHttpClient.Builder().apply { addInterceptor(interceptor) }.build()
 
     init{

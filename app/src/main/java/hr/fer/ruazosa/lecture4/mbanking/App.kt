@@ -9,7 +9,7 @@ import androidx.security.crypto.MasterKeys
 class App : Application() {
 
 
-    lateinit var masterKey : String
+    lateinit var masterKey: String
     lateinit var sharedPreferences: SharedPreferences
 
     companion object {
@@ -25,7 +25,7 @@ class App : Application() {
     }
 
     fun setupSharedPreferences() {
-            sharedPreferences = EncryptedSharedPreferences.create(
+        sharedPreferences = EncryptedSharedPreferences.create(
             "MBanking",
             masterKey,
             applicationContext,

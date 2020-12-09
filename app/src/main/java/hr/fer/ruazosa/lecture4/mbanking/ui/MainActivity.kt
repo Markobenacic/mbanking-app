@@ -1,4 +1,4 @@
-package hr.fer.ruazosa.lecture4.mbanking.UI
+package hr.fer.ruazosa.lecture4.mbanking.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

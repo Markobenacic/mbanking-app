@@ -1,24 +1,18 @@
-package hr.fer.ruazosa.lecture4.mbanking.UI
+package hr.fer.ruazosa.lecture4.mbanking.ui
 
-import android.os.Build
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import hr.fer.ruazosa.lecture4.mbanking.AccountAdapter
 import hr.fer.ruazosa.lecture4.mbanking.R
 import hr.fer.ruazosa.lecture4.mbanking.TransactionAdapter
 import hr.fer.ruazosa.lecture4.mbanking.networking.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.DateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 class TransactionsActivity : AppCompatActivity() {
 

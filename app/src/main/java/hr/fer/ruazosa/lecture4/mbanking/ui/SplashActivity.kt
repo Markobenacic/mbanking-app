@@ -1,4 +1,4 @@
-package hr.fer.ruazosa.lecture4.mbanking.UI
+package hr.fer.ruazosa.lecture4.mbanking.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,10 +6,9 @@ import android.os.Bundle
 import android.os.Handler
 import hr.fer.ruazosa.lecture4.mbanking.PreferencesHelper
 import hr.fer.ruazosa.lecture4.mbanking.R
+import hr.fer.ruazosa.lecture4.mbanking.SPLASH_TIMEOUT
 
 class SplashActivity : AppCompatActivity() {
-
-    private val SPLASH_TIME_OUT: Long = 3000
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,22 +19,22 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
             registerOrLogin()
             finish()
-        }, SPLASH_TIME_OUT)
+        }, SPLASH_TIMEOUT)
     }
 
 
     /*
         If already registered opens login screen, if not opens register screen
      */
-    fun registerOrLogin(){
+    fun registerOrLogin() {
         val isRegistered =
             PreferencesHelper.getIsRegistered()
-        if(!isRegistered){
+        if (!isRegistered) {
             PreferencesHelper.putIsRegistered(
                 false
             )
             startActivity(Intent(this, RegisterActivity::class.java))
-        }else{
+        } else {
             startActivity(Intent(this, LoginActivity::class.java))
         }
     }

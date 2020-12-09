@@ -24,7 +24,7 @@
         android:textSize="36dp"
         android:textStyle="bold"
         android:gravity="center"
-        android:textColor="#4A4E69"
+        android:textColor="@color/independence"
         android:padding="30dp"/>
 
     <ProgressBar
@@ -40,7 +40,7 @@
         android:maxHeight="120dp"
         android:maxWidth="120dp"
 
-        android:indeterminateTint="#4A4E69"/>
+        android:indeterminateTint="@color/independence"/>
 
 
 

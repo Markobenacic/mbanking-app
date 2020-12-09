@@ -1,4 +1,4 @@
-package hr.fer.ruazosa.lecture4.mbanking.UI
+package hr.fer.ruazosa.lecture4.mbanking.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -43,7 +43,7 @@ class PinActivity : AppCompatActivity() {
         buttonListeners()
     }
 
-    fun onConfirmClicked() {
+    private fun onConfirmClicked() {
 
         fullName = intent.getStringExtra(FULL_NAME_USER)
 
@@ -74,7 +74,7 @@ class PinActivity : AppCompatActivity() {
         }
     }
 
-    fun buttonListeners() {
+    private fun buttonListeners() {
 
 
         //lambda koja se poziva kada je stisnut broj
@@ -133,7 +133,7 @@ class PinActivity : AppCompatActivity() {
     }
 
 
-    fun initShuffle() {
+    private fun initShuffle() {
         shuffledNumbers = mutableListOf()
         for (i in 0..9) {
             shuffledNumbers.add(i)

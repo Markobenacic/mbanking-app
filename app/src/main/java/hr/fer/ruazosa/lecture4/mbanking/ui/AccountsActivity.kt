@@ -1,22 +1,15 @@
-package hr.fer.ruazosa.lecture4.mbanking.UI
+package hr.fer.ruazosa.lecture4.mbanking.ui
 
-import android.app.Service
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageButton
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import hr.fer.ruazosa.lecture4.mbanking.AccountAdapter
-import hr.fer.ruazosa.lecture4.mbanking.AccountItem
 import hr.fer.ruazosa.lecture4.mbanking.R
 import hr.fer.ruazosa.lecture4.mbanking.networking.*
-import io.reactivex.Single
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

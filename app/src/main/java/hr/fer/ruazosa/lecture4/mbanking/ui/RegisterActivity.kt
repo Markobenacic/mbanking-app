@@ -1,4 +1,4 @@
-package hr.fer.ruazosa.lecture4.mbanking.UI
+package hr.fer.ruazosa.lecture4.mbanking.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -27,7 +27,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
 
-    fun setListeners(){
+    private fun setListeners(){
         confirmButton.setOnClickListener {
             if(namesCheck()){
                 val intent = Intent(this, PinActivity::class.java)
@@ -44,12 +44,12 @@ class RegisterActivity : AppCompatActivity() {
     }
 
 
-    fun getFullName() : String{
+    private fun getFullName() : String{
         return firstNameEditText.text.toString() + " " + lastNameEditText.text.toString()
     }
 
 
-    fun namesCheck() : Boolean{
+    private fun namesCheck() : Boolean{
 
         val firstName = firstNameEditText.text.toString()
         val lastName = lastNameEditText.text.toString()
@@ -67,7 +67,7 @@ class RegisterActivity : AppCompatActivity() {
         return true
     }
 
-    fun isAlphaNumeric(s: String) : Boolean{
+    private fun isAlphaNumeric(s: String) : Boolean{
         return s.matches("^[a-zA-Z0-9]*$".toRegex())
     }
 }

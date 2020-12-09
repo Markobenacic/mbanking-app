@@ -1,4 +1,4 @@
-package hr.fer.ruazosa.lecture4.mbanking.UI
+package hr.fer.ruazosa.lecture4.mbanking.ui
 
 import android.content.Intent
 import  android.os.Bundle
@@ -10,9 +10,9 @@ import hr.fer.ruazosa.lecture4.mbanking.*
 
 class LoginActivity : AppCompatActivity() {
 
-    lateinit var firstNameEditText : EditText
-    lateinit var lastNameEditText : EditText
-    lateinit var confirmButton : Button
+    lateinit var firstNameEditText: EditText
+    lateinit var lastNameEditText: EditText
+    lateinit var confirmButton: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,10 +23,15 @@ class LoginActivity : AppCompatActivity() {
         lastNameEditText = findViewById(R.id.loginLastNameTxt)
         confirmButton = findViewById(R.id.confirmLoginButton)
 
+        setListeners()
 
+
+    }
+
+    private fun setListeners() {
         confirmButton.setOnClickListener {
 
-            if(checkIfUserExists()){
+            if (checkIfUserExists()) {
                 val intent = Intent(this, PinActivity::class.java)
                 intent.putExtra(FULL_NAME_USER, getFullName())
                 intent.putExtra(
@@ -34,16 +39,15 @@ class LoginActivity : AppCompatActivity() {
                     PIN_MODE_LOGIN
                 )
                 startActivity(intent)
-            }else{
-                Toast.makeText(this,"User does not exist", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "User does not exist", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
+    private fun checkIfUserExists() = getFullName() == PreferencesHelper.getName()
 
-    fun checkIfUserExists() = getFullName() == PreferencesHelper.getName()
-
-    fun getFullName() : String{
+    private fun getFullName(): String {
         return firstNameEditText.text.toString() + " " + lastNameEditText.text.toString()
     }
 }

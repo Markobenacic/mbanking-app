@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/accountCardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/accountCardView"
     android:layout_margin="4dp">
 
     <RelativeLayout
@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="IBAN: "
-            android:textColor="#4A4E69"
+            android:textColor="@color/independence"
             android:textSize="20sp"></TextView>
 
         <TextView
@@ -24,28 +24,29 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/ibanTextView"
             android:layout_marginTop="18dp"
-            android:textColor="#4A4E69"
             android:text="Balance: "
+            android:textColor="@color/independence"
             android:textSize="20sp"></TextView>
+
         <TextView
-            android:layout_width="wrap_content"
             android:id="@+id/ibanTextView2"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/ibanTextView"
-            android:text="2349827382439842398742398"
-            android:paddingLeft="6dp"
-            android:layout_marginTop="4dp"
-            android:textSize="16sp">
-        </TextView>
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/ibanTextView"
+            android:paddingLeft="6dp"
+            android:text="2349827382439842398742398"
+            android:textSize="16sp"></TextView>
+
+        <TextView
             android:id="@+id/balanceTextView2"
-            android:layout_toEndOf="@+id/balanceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/ibanTextView"
             android:layout_marginTop="22dp"
-            android:textSize="16sp"
-            android:text="250,6 HRK">
+            android:layout_toEndOf="@+id/balanceTextView"
+            android:text="250,6 HRK"
+            android:textSize="16sp">
 
         </TextView>
 
@@ -54,9 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="82dp"
             android:layout_alignParentRight="true"
-            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-
-            ></ImageView>
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"></ImageView>
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

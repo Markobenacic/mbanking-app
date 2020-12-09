@@ -5,3 +5,5 @@ const val PIN_MODE = "pin_mode"
 const val PIN_MODE_REGISTER = "pin_mode_register"
 const val PIN_MODE_LOGIN = "pin_mode_login"
 const val BASE_URL = "http://mobile.asseco-see.hr/"
+const val IS_REGISTERED = "Registered"
+const val SPLASH_TIMEOUT: Long = 3000

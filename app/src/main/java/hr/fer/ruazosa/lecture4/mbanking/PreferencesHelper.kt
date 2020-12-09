@@ -2,28 +2,31 @@ package hr.fer.ruazosa.lecture4.mbanking
 
 import android.content.SharedPreferences
 
-object PreferencesHelper{
+object PreferencesHelper {
 
-    const val IS_REGISTERED = "Registered"
 
     var sharedPreferences: SharedPreferences = App.instance.sharedPreferences
 
-    fun getIsRegistered(): Boolean{
+    fun getIsRegistered(): Boolean {
         return sharedPreferences.getBoolean(IS_REGISTERED, false)
     }
-    fun putIsRegistered(state: Boolean){
+
+    fun putIsRegistered(state: Boolean) {
         sharedPreferences.edit().putBoolean(IS_REGISTERED, state).apply()
     }
 
-    fun putUserCredentials(name : String, pin : String){
-        sharedPreferences.edit().putString(FULL_NAME_USER,name).apply()
-        sharedPreferences.edit().putString(name,pin).apply()
+    fun putUserCredentials(name: String, pin: String) {
+        sharedPreferences.edit().putString(FULL_NAME_USER, name).apply()
+        sharedPreferences.edit().putString(name, pin).apply()
     }
-    fun getPin(name : String) : String{
-        return sharedPreferences.getString(name, "")?:""
+
+    fun getPin(name: String): String {
+        return sharedPreferences.getString(name, "") ?: ""
     }
-    fun getName() : String{
-        return sharedPreferences.getString(FULL_NAME_USER, "Something went wrong")?:"something went wrong"
+
+    fun getName(): String {
+        return sharedPreferences.getString(FULL_NAME_USER, "Something went wrong")
+            ?: "something went wrong"
     }
 
 }

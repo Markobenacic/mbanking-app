@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:textColor="#4A4E69"
+        android:textColor="@color/independence"
         android:text="Register" />
 
     <EditText
@@ -23,7 +23,7 @@
         android:textSize="20sp"
         android:layout_marginTop="40dp"
         android:hint="First Name"
-        android:backgroundTint="#4A4E69"
+        android:backgroundTint="@color/independence"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
@@ -33,7 +33,7 @@
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:hint="Last name"
-        android:backgroundTint="#4A4E69"
+        android:backgroundTint="@color/independence"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
