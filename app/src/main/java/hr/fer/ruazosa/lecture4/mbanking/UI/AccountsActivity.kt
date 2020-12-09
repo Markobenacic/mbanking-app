@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,6 +28,8 @@ class AccountsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_accounts)
+
+        setupLogoutButton()
 
         setupRetrofit()
     }
@@ -64,6 +67,14 @@ class AccountsActivity : AppCompatActivity() {
         val intent = Intent(this, TransactionsActivity::class.java)
         intent.putExtra("account_id", id)
         startActivity(intent)
+    }
+
+    fun setupLogoutButton(){
+        var logoutButton: ImageButton = findViewById<ImageButton>(R.id.logoutButton)
+        logoutButton.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
 
