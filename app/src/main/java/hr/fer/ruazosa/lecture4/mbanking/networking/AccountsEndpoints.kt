@@ -11,6 +11,4 @@ interface AccountsEndpoints {
 
     @GET("/builds/ISBD_public//Zadatak_1.json")
     fun getUser(): Call<User>
-
-
 }

@@ -23,6 +23,11 @@ class RegisterActivity : AppCompatActivity() {
         confirmButton = findViewById(R.id.confirmRegisterButton)
 
 
+        setListeners()
+    }
+
+
+    fun setListeners(){
         confirmButton.setOnClickListener {
             if(namesCheck()){
                 val intent = Intent(this, PinActivity::class.java)
@@ -39,13 +44,8 @@ class RegisterActivity : AppCompatActivity() {
     }
 
 
-
-
     fun getFullName() : String{
         return firstNameEditText.text.toString() + " " + lastNameEditText.text.toString()
-    }
-
-    fun saveData(){
     }
 
 

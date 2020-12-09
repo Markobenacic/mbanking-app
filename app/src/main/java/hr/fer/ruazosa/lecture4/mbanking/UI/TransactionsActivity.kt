@@ -40,7 +40,7 @@ class TransactionsActivity : AppCompatActivity() {
 
     fun setupRetrofit() {
         val request = ServiceBuilder.buildService(AccountsEndpoints::class.java)
-        var call = request.getUser().enqueue(object : Callback<User> {
+        request.getUser().enqueue(object : Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.isSuccessful) {
                     transactions =

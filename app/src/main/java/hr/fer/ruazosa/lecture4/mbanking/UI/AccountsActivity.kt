@@ -38,7 +38,7 @@ class AccountsActivity : AppCompatActivity() {
 
     fun setupRetrofit(){
         val request = ServiceBuilder.buildService(AccountsEndpoints::class.java)
-        var call =  request.getUser().enqueue(object : Callback<User> {
+        request.getUser().enqueue(object : Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.isSuccessful){
                     listOfAccounts = response.body()!!.acounts
@@ -51,7 +51,6 @@ class AccountsActivity : AppCompatActivity() {
                 Toast.makeText(this@AccountsActivity, "${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
-
     }
 
     private fun setupRecyclerView(lista:  List<Account>){
